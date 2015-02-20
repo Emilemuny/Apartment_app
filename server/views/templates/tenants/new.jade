@@ -3,5 +3,41 @@ block content
 
   
 
-  h3 NEW TENANT PAGE
+  h3 Enter new tenant info.
+  
+  .row
+    .col-xs-4
+      form(method='post', action='/tenants')
+        .form-group
+          label(for='name') Name
+          input#name.form-control(type='text', name='name', autofocus=true)
+        .form-group
+          label(for='name') Address
+          input#address.form-control(type='text', name='address', autofocus=true) 
+        .form-group
+          label(for='contact') Contact
+          input#contact.form-control(type='text', name='contact', placeholder='Enter your phone number')
+        .form-group
+          label(for='description') Description
+          textarea#description.form-control(rows='5', name='description', placeholder='Please give some info about the tenant')
+        .form-group
+          label(for='age') Age
+          input#age.form-control(type='number', name='age')
+        .form-group
+          label Gender
+          .radio
+            label
+              input(type='radio', name='gender', value='male')
+              span Male
+          .radio
+            label
+              input(type='radio', name='gender', value='female')
+              span Female
+        .form-group
+            label(for='photo') Photo
+            input#photo.form-control(type='url', name='photo')
+        .form-group
+          button.btn.btn-default(type='submit') Add Tenant
+    .col-xs-8
+          
   

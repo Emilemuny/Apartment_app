@@ -1,7 +1,28 @@
 extends ../../layouts/master
 block content
-
+  form(method='post', action='/tenants/#{tenant._id}/delete')
+    
+  button.btn.btn-danger(type='submit') Delete tenant
+  a.btn.btn-info(href='/tenants/#{tenant._id}/edit') Edit tenant  
   
-  h3 SHOW TENANT PAGE
+  .page-header
+    h1= tenant.name
+  p= tenant.address
+  table.table
+    thead
+      tr.active
+        th Contact
+        th Description
+        th Age
+        th Gender
+    tbody
+      tr.success
+        td= tenant.contact
+        td= tenant.description
+        td= tenant.age
+        td= tenant.gender
+  
+  
+
 
   

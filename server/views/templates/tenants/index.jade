@@ -1,7 +1,31 @@
 extends ../../layouts/master
 block content
 
+  a(href='/tenants/new') Add new Tenant
   
-  h3 Tenants INDEX PAGE
-
+  #tenants
+    each tenant in tenants
+      .client
+        .panel.panel-default
+    
+        
+          .panel-heading
+            h3.panel-title: a(href='/tenants/#{tenant._id}')= tenant.name
+          .panel-body
+            .col-md-8
+              dl
+                dt Address
+                 dd= tenant.address
+                   dt Contact
+                 dd= tenant.contact
+                   dt Description
+                 dd= tenant.description
+                   dt Age
+                 dd= tenant.age
+                  dt Gender
+                 dd= tenant.gender
+            .col-md-4
+               .photo(style='background-image:url("'+tenant.photo+'")')
+            
+                        
   

@@ -2,7 +2,7 @@ extends ../../layouts/master
 block content
 
   
-  h3 NEW APARTMENT PAGE
+  h3 Enter new Apt. info
   
   .row
     .col-xs-4
@@ -11,17 +11,17 @@ block content
           label(for='name') Name
           input#name.form-control(type='text', name='name', autofocus=true)
         .form-group
-          label(for='name') Address
+          label(for='address') Address
           input#address.form-control(type='text', name='address', autofocus=true) 
         .form-group
           label(for='description') Description
-          textarea#description.form-control(rows='5', name='description')
+          textarea#description.form-control(rows='5', name='description', placeholder='Please give some info about this apartment')
         .form-group
-          label(for='no-rooms') No. of Rooms
-          input#no-rooms.form-control(type='number', name='no-rooms')
+          label(for='norooms') No. of Rooms
+          input#no-rooms.form-control(type='number', name='norooms')
         .form-group
           label(for='price') Price
-          input#price.form-control(type='number', name='price')
+          input#price.form-control(type='number', name='price', placeholder='$$$') 
         .form-group
           button.btn.btn-default(type='submit') Add Apartment
     .col-xs-8

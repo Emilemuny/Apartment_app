@@ -4,3 +4,33 @@ block content
   
   h3 Edit TENANT PAGE
   
+  .row
+    .col-xs-4
+      form(method='post', action='/tenants/#{tenant._id}')
+        .form-group
+          label(for='name') Name
+          input#name.form-control(type='text', name='name', autofocus=true, value=tenant.name)
+        .form-group
+          label(for='description') Description
+          textarea#description.form-control(rows='5', name='description')= tenant.description
+        .form-group
+          label(for='age') Age
+          input#age.form-control(type='number', name='age', value=tenant.age)
+        .form-group
+          label Gender
+          .radio
+            label
+              input(type='radio', name='gender', value='male')
+              span Male
+          .radio
+            label
+              input(type='radio', name='gender', value='female')
+              span Female
+        .form-group
+          label(for='address') Address
+          input#address.form-control(type='text', name='address', value=tenant.address)
+        .form-group
+          button.btn.btn-default(type='submit') Submit 
+    .col-xs-8
+        
+  

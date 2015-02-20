@@ -1,9 +1,51 @@
 extends ../../layouts/master
 block content
-
+  form(method='post', action='/apartments/#{apartment._id}/delete')
+  
+    button.btn.btn-danger(type='submit') Remove apartment
+    a.btn.btn-info(href='/apartments/#{apartment._id}/edit') Edit apartment 
+    
   
   
-
-  h3 SHOW PAGE
+  .page-header
+    h1= apartment.name
+  p= apartment.address 
+  
+  table.table
+    thead
+      tr.active
+        th Description
+        th No. of Rooms
+        th Price
+    tbody
+      tr.success
+        td= apartment.description
+        td= apartment.norooms
+        td= apartment.price
+    
+  
+  if(!apartment.isVacant)
+    h3 Choose a tenant and assign a room
+    form.form-inline(method='post', action='/apartments/#{apartment._id}/adopt')
+      .form-group
+        select#roomNo.form-control.input-sm(name='roomNos')
+          option 101
+          option 102
+          option 103
+        select#tenantId.form-control.input-sm(name='tenantId')
+          each tenant in tenants
+            option(value=tenant._id)= tenant.name
+      .form-group
+        button.btn.btn-primary.btn-sm(type='submit') Assign
+  
+  table.table.table-striped
+    thead
+      tr
+        th Room #
+        th Tenant
+    tbody
+      tr
+        td= '101'
+        td= 'Emile'  
 
   

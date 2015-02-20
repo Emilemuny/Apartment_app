@@ -1,18 +1,27 @@
 extends ../../layouts/master
 block content
 
-  a(href='/animals/new') Add Apartment
+  a(href='/apartments/new') Add Apartment
 
-  h3 APARTMENT INDEX PAGE
+
   #apartments
     each apartment in apartments
       .apartment
         .panel.panel-default
           .panel-heading
             h3.panel-title: a(href='/apartments/#{apartment._id}')= apartment.name
-            
           .panel-body
              .pandel-success
+               dl
+                 dt Address
+                 dd= apartment.address
+                 dt Description
+                 dd= apartment.description
+                 dt No. of Rooms
+                 dd= apartment.norooms
+                 dt price
+                 dd= apartment.price
+               
                
 
   

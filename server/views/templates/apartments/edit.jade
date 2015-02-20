@@ -3,6 +3,27 @@ block content
 
   
 
-  h3 EDIT APARTMENT PAGE
+
+    .row
+    .col-xs-4
+      form(method='post', action='/apartments/#{apartment._id}')
+        .form-group
+          label(for='name') Name
+          input#name.form-control(type='text', name='name', autofocus=true, value=apartment.name)
+        
+        .form-group
+          label(for='address') Address
+          input#address.form-control(type='text', name='address', autofocus=true, value=apartment.address)
+        .form-group
+          label(for='description') Description
+          textarea#description.form-control(rows='5', name='description')=apartment.description
+        .form-group
+          label(for='norooms') No. of Rooms
+          input#no-rooms.form-control(type='number', name='norooms', value=apartment.norooms)
+        .form-group
+          label(for='price') Price
+          input#price.form-control(type='number', name='price', value=apartment.price) 
+          button.btn.btn-default(type='submit') Submit your changes
+    .col-xs-8
   
   

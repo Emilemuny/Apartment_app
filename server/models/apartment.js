@@ -2,19 +2,17 @@
 
 var mongoose = require('mongoose');
 
+
 var apartmentSchema = mongoose.Schema({
     name: String,
     address: String,
+    description: String,
     norooms: Number,
     price: Number,
-    //rooms:[ {type: Schema.Types.ObjectId, ref: 'rooms'} ]
+    rooms: [{ roomNo: Number, tenant: String}],
+    Vacant: {type: Boolean, default: true}
+
 
 });
 
-var roomsSchema = mongoose.Schema({
-    name :String,
-    price : Number,
-});
-
-module.exports = mongoose.model('Rooms', roomsSchema);
 module.exports = mongoose.model('Apartment', apartmentSchema);

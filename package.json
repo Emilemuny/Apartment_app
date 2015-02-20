@@ -1,7 +1,7 @@
 {
-  "name": "Apartment_app",
+  "name": "hapi-prototype",
   "description": "Hapi Prototype Application",
-  "homepage": "",
+  "homepage": "https://github.com/coding-house-jan2015/hapi-prototype",
   "engines": {
     "node": "0.12.x"
   },
@@ -22,7 +22,8 @@
   },
   "version": "1.0.0",
   "scripts": {
-    "start": "MONGO_URL=mongodb://localhost/AptView PORT=3333 nodemon server/index.js",
+    "start": "node server/index.js",
+    "localstart": "MONGO_URL=mongodb://localhost/AptView PORT=3333 nodemon server/index.js",
     "clean": "rm -rf node_modules && rm -rf public && npm install && bower install && gulp build",
     "postinstall": "bower install && gulp build"
   },
@@ -44,6 +45,7 @@
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.2",
     "gulp-less": "^3.0.0",
+    "gulp-watch": "^4.1.1",
     "jshint-stylish": "^1.0.0"
   }
 }
