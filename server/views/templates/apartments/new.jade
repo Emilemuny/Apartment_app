@@ -1,0 +1,35 @@
+extends ../../layouts/master
+block content
+
+  
+  h3 NEW APARTMENT PAGE
+  
+  .row
+    .col-xs-4
+      form(method='post', action='/apartments')
+        .form-group
+          label(for='name') Name
+          input#name.form-control(type='text', name='name', autofocus=true)
+        .form-group
+          label(for='name') Address
+          input#address.form-control(type='text', name='address', autofocus=true) 
+        .form-group
+          label(for='description') Description
+          textarea#description.form-control(rows='5', name='description')
+        .form-group
+          label(for='no-rooms') No. of Rooms
+          input#no-rooms.form-control(type='number', name='no-rooms')
+        .form-group
+          label(for='price') Price
+          input#price.form-control(type='number', name='price')
+        .form-group
+          button.btn.btn-default(type='submit') Add Apartment
+    .col-xs-8
+          
+           
+            
+            
+            
+            
+
+  
