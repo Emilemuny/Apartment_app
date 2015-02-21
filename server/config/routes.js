@@ -19,5 +19,11 @@ module.exports = [
   {method: 'get', path: '/tenants/{tenantId}', config: require('../routes/tenants/show')},
   {method: 'post', path: '/tenants/{tenantId}/delete', config: require('../routes/tenants/destroy')},
   {method: 'get', path: '/tenants/{tenantId}/edit', config: require('../routes/tenants/edit')},
-  {method: 'post', path: '/tenants/{tenantId}', config: require('../routes/tenants/update')}
+  {method: 'post', path: '/tenants/{tenantId}', config: require('../routes/tenants/update')},
+
+  {method: 'get', path: '/register', config: require('../routes/users/new')},
+  {method: 'post', path: '/users', config: require('../routes/users/create')},
+  {method: 'get', path: '/login', config: require('../routes/users/login')},
+  {method: 'post', path: '/users/authenticate', config: require('../routes/users/authenticate')},
+  {method: 'post', path: '/logout', config: require('../routes/users/logout')}
 ];

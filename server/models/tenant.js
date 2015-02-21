@@ -10,6 +10,7 @@ var tenantSchema = mongoose.Schema({
     age: {type: Number, required: true},
     gender: {type: String, required: true},
     photo: {type: String, required: true},
+
     room: [{type: mongoose.Schema.ObjectId, ref: 'Apartment'}]
 
 });
