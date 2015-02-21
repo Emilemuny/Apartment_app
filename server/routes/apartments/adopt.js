@@ -7,8 +7,9 @@ module.exports = {
   handler: function(request, reply) {
     Apartment.findById(request.params.apartmentId, function(err, apartment){
       Tenant.findById(request.payload.tenantId, function(err, tenant){
-        apartment.rooms.push({ tenant: tenant.name });
-        //apartment.rooms.push({ roomNo: request.param.roomNos});
+        console.log(request.payload);
+        apartment.rooms.push({ tenant: tenant.name, roomno: request.payload.roomNos });
+      //  apartment.rooms.push({ roomNo: roomNos});
         apartment.vacant = false;
         tenant.save(function(){
           apartment.save(function(){

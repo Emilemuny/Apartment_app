@@ -9,7 +9,7 @@ var apartmentSchema = mongoose.Schema({
     description: String,
     norooms: Number,
     price: Number,
-    rooms: [{ roomNo: Number, tenant: String}],
+    rooms: [{tenant: String, roomno: Number}],
     Vacant: {type: Boolean, default: true}
 
 

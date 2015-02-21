@@ -29,14 +29,16 @@ block content
     form.form-inline(method='post', action='/apartments/#{apartment._id}/adopt')
       .form-group
         select#roomNo.form-control.input-sm(name='roomNos')
-          option 101
-          option 102
-          option 103
+          -for(var n= 1; n <= apartment.norooms; n++){
+          option #{n+100}
+          -}
+         
         select#tenantId.form-control.input-sm(name='tenantId')
           each tenant in tenants
             option(value=tenant._id)= tenant.name
       .form-group
         button.btn.btn-primary.btn-sm(type='submit') Assign
+  
   
   table.table.table-striped
     thead
@@ -45,7 +47,17 @@ block content
         th Tenant
     tbody
       tr
-        td= '101'
-        td= 'Emile'  
+        for each room in rooms
+          td= room.tenant
+          td= room.roomNos
+        
+    
+        
+      
+          
+          
+          
+          
+        
 
   
