@@ -10,20 +10,16 @@ module.exports = {
       email: Joi.string().email(),
       password: Joi.string().min(3)
     }
-
   },
   auth: false,
   handler: function(request, reply) {
-
-    var user = new User(request.payload);
-    user.register(function(err){
-      if(err){
+    var user = new User (request.payload);
+    user.register(function(err) {
+      if(err) {
         reply.redirect('/register');
       } else {
         reply.redirect('/login');
         }
       });
-
-
   }
 };

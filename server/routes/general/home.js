@@ -1,12 +1,10 @@
 'use strict';
 
-var active = require('../../views/helpers/active');
-
 module.exports = {
-  auth: false,
+  auth: {
+    mode: 'try'
+  },
   handler: function(request, reply) {
-
-
-    reply.view('templates/general/home', request.auth.credentials);
+    reply.view('templates/general/home');
   }
 };

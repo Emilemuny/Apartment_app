@@ -20,7 +20,7 @@ userSchema.methods.register = function(cb) {
   });
 };
 
-userSchema.statics.authenticte = function(user, cb) {
+userSchema.statics.authenticate = function(user, cb) {
   User.findOne({email:user.email}, function(err, dbuser) {
     if(!dbuser) {return cb(true);}
 

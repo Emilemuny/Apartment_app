@@ -12,15 +12,14 @@ module.exports = {
     }
 
   },
+  auth: false,
   handler: function(request, reply) {
     User.authenticate(request.payload, function(err, user) {
-      console.log('the user is', user);
-
       if (err) {
         reply.redirect('/login');
       } else {
         request.auth.session.set(user);
-        reply.redirect('/');
+        reply.redirect('/authorizedhome');
       }
     });
   }

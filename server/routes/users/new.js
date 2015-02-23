@@ -2,7 +2,7 @@
 
 module.exports = {
   auth: {
-    mode: false,
+    mode: 'try'
   },
   handler: function(request, reply) {
     reply.view('templates/users/new');

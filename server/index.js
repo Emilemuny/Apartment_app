@@ -17,31 +17,9 @@ mongoose.connection.once('open', function() {
     server.auth.strategy('session', 'cookie', true, authentication);
     server.route(routes);
     server.start(function() {
+    //  require('./events/on-pre-response')(server);
       console.log('info', server.info.uri);
       console.log('info', process.env.MONGO_URL);
     });
   });
-});
-
-var _ = require('lodash');
-
-server.ext('onPreResponse', function(request, reply){
-  if(!request.response.source){
-    return reply.continue();
-  }
-
-  console.log('i am in your site ******');
-  console.log('user info',request.auth.credentials);
-  console.log('current route data',request.response.source.context);
-
-  var c = request.auth.credentials || {};
-  var r = request.response.source.context || {};
-  var o = _.merge(c, r);
-
-  console.log('final obj', o);
-  console.log('\n\n\n\n');
-
-  request.response.source.context = o;
-
-  return reply.redirect()
 });
